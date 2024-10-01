@@ -2,14 +2,14 @@
 ---@field accent string
 local palette = {
   -- dark
-  dark = "#0c0d10",
-  dark00 = "#101215",
-  dark0 = "#14161a",
+  dark = "#14161a",
+  dark0 = "#181a1f",
   dark1 = "#1c1f24",
   dark2 = "#282c34",
   dark3 = "#3e4148",
   dark4 = "#53565d",
   dark5 = "#696b71",
+  dark6 = "#7e8085",
 
   -- white
   white = "#ffffff",

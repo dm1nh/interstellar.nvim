@@ -67,7 +67,7 @@ function M.setup(colors, config)
     NvimTreeExecFile = { fg = theme.syn.string, bold = true },
     NvimTreeOpenedFile = { fg = theme.syn.special1, italic = true },
     NvimTreeWinSeparator = { link = "WinSeparator" },
-    NvimTreeWindowPicker = { bg = theme.ui.bg_dark, fg = theme.syn.special1, bold = true },
+    NvimTreeWindowPicker = { bg = theme.ui.bg_m1, fg = theme.syn.special1, bold = true },
 
     -- NeoTree
     NeoTreeTabInactive = { link = "TabLine" },
@@ -86,7 +86,7 @@ function M.setup(colors, config)
     NeoTreeIndentMarker = { link = "NonText" },
 
     -- WindowPicker
-    -- NvimWindowSwitch = { bg = theme.ui.bg_m3, fg = theme.diag.warning },
+    -- NvimWindowSwitch = { bg = theme.ui.bg_m2, fg = theme.diag.warning },
     -- NvimWindowSwitchNC = { link = "NvimWindowSwitch" },
 
     -- Dashboard
@@ -124,13 +124,13 @@ function M.setup(colors, config)
     DapUIType = { link = "Type" }, -- guifg=#D484FF"
     -- DapUIValue = { link = "Normal" },
     DapUIModifiedValue = { fg = theme.syn.special1, bold = true }, -- guifg=#00F1F5 gui=bold"
-    DapUIDecoration = { fg = theme.ui.float.fg_border }, -- guifg=#00F1F5"
+    DapUIDecoration = { fg = theme.ui.float.border }, -- guifg=#00F1F5"
     DapUIThread = { fg = theme.syn.identifier }, --guifg=#A9FF68"
     DapUIStoppedThread = { fg = theme.syn.special1 }, --guifg=#00f1f5"
     -- DapUIFrameName = { link = "Normal"},
     DapUISource = { fg = theme.syn.special2 }, -- guifg=#D484FF"
     DapUILineNumber = { fg = theme.syn.special1 }, -- guifg=#00f1f5"
-    DapUIFloatBorder = { fg = theme.ui.float.fg_border }, -- guifg=#00F1F5"
+    DapUIFloatBorder = { fg = theme.ui.float.border }, -- guifg=#00F1F5"
     DapUIWatchesEmpty = { fg = theme.diag.error }, -- guifg=#F70067"
     DapUIWatchesValue = { fg = theme.syn.identifier }, -- guifg=#A9FF68"
     DapUIWatchesError = { fg = theme.diag.error }, --guifg=#F70067"
@@ -150,7 +150,7 @@ function M.setup(colors, config)
     DapUIUnavailable = { fg = theme.syn.comment }, --guifg=#424242"
 
     -- Floaterm
-    FloatermBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
+    FloatermBorder = { fg = theme.ui.float.border, bg = theme.ui.bg },
 
     -- NeoVim                         = {},
     healthError = { fg = theme.diag.error },
@@ -169,15 +169,15 @@ function M.setup(colors, config)
     CmpItemAbbrDeprecated = { fg = theme.syn.comment, strikethrough = true },
     CmpItemAbbrMatch = { fg = theme.syn.fun },
     CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" },
-    CmpItemKindDefault = { fg = theme.ui.fg_dim },
-    CmpItemMenu = { fg = theme.ui.fg_dim },
+    CmpItemKindDefault = { fg = theme.ui.fg_dark },
+    CmpItemMenu = { fg = theme.ui.fg_dark },
 
     CmpItemKindText = { fg = theme.ui.fg },
     CmpItemKindMethod = { link = "@function.method" },
     CmpItemKindFunction = { link = "Function" },
     CmpItemKindConstructor = { link = "@constructor" },
     CmpItemKindField = { link = "@variable.member" },
-    CmpItemKindVariable = { fg = theme.ui.fg_dim },
+    CmpItemKindVariable = { fg = theme.ui.fg_dark },
     CmpItemKindClass = { link = "Type" },
     CmpItemKindInterface = { link = "Type" },
     CmpItemKindModule = { link = "@module" },
@@ -292,7 +292,7 @@ function M.setup(colors, config)
     MiniFilesBorderModified = { fg = theme.diag.error },
     MiniFilesCursorLine = { bg = theme.ui.bg_p1 },
     MiniFilesDirectory = { fg = theme.ui.accent },
-    MiniFilesFile = { fg = theme.ui.fg_dim },
+    MiniFilesFile = { fg = theme.ui.fg_dark },
     MiniFilesTitle = { fg = theme.ui.float.title },
     MiniFilesTitleFocused = { fg = theme.ui.float.title_focused },
   }

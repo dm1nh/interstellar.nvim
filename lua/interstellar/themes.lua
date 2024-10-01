@@ -44,9 +44,13 @@
 ---@field accent ColorSpec
 ---@field fg ColorSpec Default foreground
 ---@field fg_dark ColorSpec Darker foreground
+---@field fg_reverse ColorSpec Reverse foreground
 ---@field bg ColorSpec Default background
----@field bg_dark ColorSpec Darker background
 ---@field bg_gutter ColorSpec {Sign,Fold}Column, LineNr
+---@field bg_p1 ColorSpec
+---@field bg_p2 ColorSpec
+---@field bg_m1 ColorSpec
+---@field bg_m2 ColorSpec
 ---@field special ColorSpec SpecialKey
 ---@field nontext ColorSpec LineNr, NonText
 ---@field whitespace ColorSpec Whitespace
@@ -83,17 +87,21 @@ return {
   ---@param palette PaletteColors
   ---@param accent string
   ---@return ThemeColors
-  dark = function(palette, accent)
+  singularity = function(palette, accent)
     return {
       ui = {
         accent = palette[accent],
 
         fg = palette.white1,
         fg_dark = palette.white0,
+        fg_reverse = palette.dark1,
 
         bg = palette.dark1,
-        bg_dark = palette.dark0,
-        bg_gutter = palette.dark3,
+        bg_gutter = palette.dark4,
+        bg_p1 = palette.dark2,
+        bg_p2 = palette.dark3,
+        bg_m1 = palette.dark0,
+        bg_m2 = palette.dark,
 
         special = palette.violet1,
         nontext = palette.dark5,
@@ -106,10 +114,10 @@ return {
         pmenu = {
           fg = palette.white0,
           fg_sel = "none", -- This is important to make highlights pass-through
-          bg = palette.dark1,
-          bg_sel = palette.dark2,
-          bg_sbar = palette.dark3,
-          bg_thumb = palette.dark4,
+          bg = palette.dark2,
+          bg_sel = palette.dark3,
+          bg_sbar = palette.dark4,
+          bg_thumb = palette.dark5,
         },
         float = {
           title = palette.white1,
@@ -184,7 +192,7 @@ return {
   ---@param palette PaletteColors
   ---@param accent string
   ---@return ThemeColors
-  darker = function(palette, accent)
+  horizon = function(palette, accent)
     return {
       ui = {
         accent = palette[accent],
@@ -192,31 +200,31 @@ return {
         fg = palette.white1,
         fg_dark = palette.white0,
 
-        bg = palette.dark0,
-        bg_dark = palette.dark00,
-        bg_gutter = palette.dark2,
+        bg = palette.dark2,
+        bg_dark = palette.dark1,
+        bg_gutter = palette.dark4,
 
         special = palette.violet1,
-        nontext = palette.dark4,
-        whitespace = palette.dark2,
+        nontext = palette.dark5,
+        whitespace = palette.dark4,
 
         bg_search = palette.blue0,
         bg_search_current = palette.violet1,
-        bg_visual = palette.dark2,
+        bg_visual = palette.dark3,
 
         pmenu = {
-          fg = palette.white0,
+          fg = palette.white2,
           fg_sel = "none", -- This is important to make highlights pass-through
           bg = palette.dark0,
-          bg_sel = palette.dark1,
-          bg_sbar = palette.dark2,
-          bg_thumb = palette.dark3,
+          bg_sel = palette.dark2,
+          bg_sbar = palette.dark3,
+          bg_thumb = palette.dark4,
         },
         float = {
           title = palette.white1,
           title_focused = palette.accent,
           fg = palette.white1,
-          bg = palette.dark00,
+          bg = palette.dark1,
           border = palette.dark3,
         },
       },
@@ -260,7 +268,7 @@ return {
         hint = palette.aqua1,
       },
       term = {
-        palette.dark4, -- black
+        palette.dark5, -- black
         palette.red1, -- red
         palette.green1, -- green
         palette.yellow1, -- yellow
@@ -268,7 +276,7 @@ return {
         palette.violet1, -- magenta
         palette.aqua1, -- cyan
         palette.white1, -- white
-        palette.dark5, -- bright black
+        palette.dark6, -- bright black
         palette.red0, -- bright red
         palette.green0, -- bright green
         palette.yellow0, -- bright yellow

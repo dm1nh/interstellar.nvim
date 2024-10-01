@@ -27,7 +27,7 @@ function M.setup(colors, config)
     -- CursorColumn	Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorColumn = { link = "CursorLine" },
     -- CursorLine	Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
-    CursorLine = { bg = theme.ui.bg_p2 },
+    CursorLine = { bg = theme.ui.bg_p1 },
     -- Directory	Directory names (and other special names in listings).
     Directory = { fg = theme.syn.fun },
     -- DiffAdd		Diff mode: Added line. |diff.txt|
@@ -45,7 +45,7 @@ function M.setup(colors, config)
     -- ErrorMsg	Error messages on the command line.
     ErrorMsg = { fg = theme.diag.error },
     -- WinSeparator	Separators between window splits.
-    WinSeparator = { fg = theme.ui.bg_m3, bg = config.dimInactive and theme.ui.bg_dim or "NONE" },
+    WinSeparator = { fg = theme.ui.bg_m2, bg = config.dimInactive and theme.ui.bg_m1 or "NONE" },
     VertSplit = { link = "WinSeparator" },
     -- Folded		Line used for closed folds.
     Folded = { fg = theme.ui.special, bg = theme.ui.bg_p1 },
@@ -62,7 +62,7 @@ function M.setup(colors, config)
     -- LineNrAbove	Line number for when the 'relativenumber' option is set, above the cursor line.
     -- LineNrBelow	Line number for when the 'relativenumber' option is set, below the cursor line.
     -- CursorLineNr	Like LineNr when 'cursorline' is set and 'cursorlineopt' contains "number" or is "both", for the cursor line.
-    CursorLineNr = { fg = theme.diag.warning, bg = theme.ui.bg_gutter, bold = true },
+    CursorLineNr = { fg = theme.ui.accent, bg = theme.ui.bg_p1, bold = true },
     -- CursorLineFold	Like FoldColumn when 'cursorline' is set for the cursor line.
     -- CursorLineSign	Like SignColumn when 'cursorline' is set for the cursor line.
     -- MatchParen	Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -70,9 +70,9 @@ function M.setup(colors, config)
     -- ModeMsg		'showmode' message (e.g., "-- INSERT --").
     ModeMsg = { fg = theme.diag.warning, bold = true },
     -- MsgArea		Area for messages and cmdline.
-    MsgArea = vim.o.cmdheight == 0 and { link = "StatusLine" } or { fg = theme.ui.fg_dim },
+    MsgArea = vim.o.cmdheight == 0 and { link = "StatusLine" } or { fg = theme.ui.fg_dark },
     -- MsgSeparator	Separator for scrolled messages |msgsep|.
-    MsgSeparator = { bg = vim.o.cmdheight == 0 and theme.ui.bg or theme.ui.bg_m3 },
+    MsgSeparator = { bg = vim.o.cmdheight == 0 and theme.ui.bg or theme.ui.bg_m2 },
     -- MoreMsg		|more-prompt|
     MoreMsg = { fg = theme.diag.info },
     -- NonText		'@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -88,15 +88,15 @@ function M.setup(colors, config)
     -- FloatFooter	Footer of floating windows.
     FloatFooter = { fg = theme.ui.nontext, bg = theme.ui.float.bg },
     -- NormalNC	Normal text in non-current windows.
-    NormalNC = config.dimInactive and { fg = theme.ui.fg_dim, bg = theme.ui.bg_dim } or { link = "Normal" },
+    NormalNC = config.dimInactive and { fg = theme.ui.fg_dark, bg = theme.ui.bg_m1 } or { link = "Normal" },
     -- Pmenu		Popup menu: Normal item.
     Pmenu = { fg = theme.ui.pmenu.fg, bg = theme.ui.pmenu.bg },
     -- PmenuSel	Popup menu: Selected item.
     PmenuSel = { fg = theme.ui.pmenu.fg_sel, bg = theme.ui.pmenu.bg_sel },
     -- PmenuKind	Popup menu: Normal item "kind".
-    PmenuKind = { fg = theme.ui.fg_dim, bg = theme.ui.pmenu.bg },
+    PmenuKind = { fg = theme.ui.fg_dark, bg = theme.ui.pmenu.bg },
     -- PmenuKindSel	Popup menu: Selected item "kind".
-    PmenuKindSel = { fg = theme.ui.fg_dim, bg = theme.ui.pmenu.bg_sel },
+    PmenuKindSel = { fg = theme.ui.fg_dark, bg = theme.ui.pmenu.bg_sel },
     -- PmenuExtra	Popup menu: Normal item "extra text".
     PmenuExtra = { fg = theme.ui.special, bg = theme.ui.pmenu.bg },
     -- PmenuExtraSel	Popup menu: Selected item "extra text".
@@ -122,15 +122,15 @@ function M.setup(colors, config)
     -- SpellRare	Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
     SpellRare = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.warning },
     -- StatusLine	Status line of current window.
-    StatusLine = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+    StatusLine = { fg = theme.ui.fg_dark, bg = theme.ui.bg_m2 },
     -- StatusLineNC	Status lines of not-current windows. Note: If this is equal to "StatusLine", Vim will use "^^^" in the status line of the current window.
-    StatusLineNC = { fg = theme.ui.nontext, bg = theme.ui.bg_m3 },
+    StatusLineNC = { fg = theme.ui.nontext, bg = theme.ui.bg_m2 },
     -- TabLine		Tab pages line, not active tab page label.
-    TabLine = { bg = theme.ui.bg_m3, fg = theme.ui.special },
+    TabLine = { bg = theme.ui.bg_m1, fg = theme.ui.special },
     -- TabLineFill	Tab pages line, where there are no labels.
     TabLineFill = { bg = theme.ui.bg },
     -- TabLineSel	Tab pages line, active tab page label.
-    TabLineSel = { fg = theme.ui.fg_dim, bg = theme.ui.bg_p1 },
+    TabLineSel = { fg = theme.ui.fg_dark, bg = theme.ui.bg_p1 },
     -- Title		Titles for output from ":set all", ":autocmd" etc.
     Title = { fg = theme.syn.fun, bold = true },
     -- Visual		Visual mode selection.
@@ -144,9 +144,9 @@ function M.setup(colors, config)
     -- WildMenu	Current match in 'wildmenu' completion.
     WildMenu = { link = "Pmenu" },
     -- WinBar		Window bar of current window.
-    Winbar = { fg = theme.ui.fg_dim, bg = "NONE" },
+    Winbar = { fg = theme.ui.fg_dark, bg = "NONE" },
     -- WinBarNC	Window bar of not-current windows.
-    WinbarNC = { fg = theme.ui.fg_dim, bg = config.dimInactive and theme.ui.bg_dim or "NONE" },
+    WinbarNC = { fg = theme.ui.fg_dark, bg = config.dimInactive and theme.ui.bg_m1 or "NONE" },
 
     -- SignColumnSB = { link = "SignColumn" },
     -- NormalSB = { link = "Normal" },

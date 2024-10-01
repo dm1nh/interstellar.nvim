@@ -3,7 +3,7 @@ local theme = require("interstellar.colors").setup().theme
 local interstellar = {}
 
 interstellar.normal = {
-  a = { bg = theme.syn.fun, fg = theme.ui.bg_m3 },
+  a = { bg = theme.syn.fun, fg = theme.ui.bg_m2 },
   b = { bg = theme.diff.change, fg = theme.syn.fun },
   c = { bg = theme.ui.bg_p1, fg = theme.ui.fg },
 }
@@ -29,9 +29,9 @@ interstellar.replace = {
 }
 
 interstellar.inactive = {
-  a = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-  b = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim, gui = "bold" },
-  c = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+  a = { bg = theme.ui.bg_m2, fg = theme.ui.fg_dark },
+  b = { bg = theme.ui.bg_m2, fg = theme.ui.fg_dark, gui = "bold" },
+  c = { bg = theme.ui.bg_m2, fg = theme.ui.fg_dark },
 }
 
 if vim.g.interstellar_lualine_bold then

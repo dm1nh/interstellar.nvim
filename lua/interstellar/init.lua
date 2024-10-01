@@ -8,7 +8,7 @@ local M = {}
 --- default config
 ---@class InterstellarConfig
 M.config = {
-  theme = "dark",
+  theme = "singularity",
   accent = "green1",
   compile = false,
   undercurl = true,
@@ -22,7 +22,7 @@ M.config = {
   transparent = false,
   dimInactive = false,
   term = true,
-  colors = { theme = { dark = {}, darker = {}, all = {} }, palette = {} },
+  colors = { theme = { singularity = {}, horizon = {}, all = {} }, palette = {} },
   ---@type fun(colors: InterstellarColorsSpec): table<string, table>
   overrides = function()
     return {}
